@@ -1082,19 +1082,19 @@ def command_bye(m):
 def command_hi(m):
     cid = m.chat.id
     cname = m.chat.title
-    id = m.new_chat_members.id
+    id = m.new_chat_member.id
     bienvenida= ""
-    if (m.new_chat_members.username is None):
-        nun = m.new_chat_members.first_name
-        if (m.new_chat_members.last_name is not None):
+    if (m.new_chat_member.username is None):
+        nun = m.new_chat_member.first_name
+        if (m.new_chat_member.last_name is not None):
             nun += " "
-            nun += m.new_chat_members.last_name
+            nun += m.new_chat_member.last_name
         else:
             bienvenida = "Bienvenido al grupo "
             bienvenida += str(cname)
             bienvenida += " "
     else:
-        nun = m.new_chat_members.username
+        nun = m.new_chat_member.username
         bienvenida = "Bienvenido al grupo "
         bienvenida += str(cname)
         bienvenida += " @"
@@ -1160,6 +1160,7 @@ def echo_message(message):
             ultimo = list(listfrase)
             if ultimo[-2] == '5' and ultimo.long > 1:
                 bot.send_message(cid,'por el culo te la inco')'''
+
 
 
 
